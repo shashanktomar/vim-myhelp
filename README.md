@@ -7,3 +7,6 @@ The cheatsheet can be used as Vim plugin. For vim-plug, add the following to you
 `Plug 'shashanktomar/vim-myhelp'`
 
 After that, install the plugin by running `:PlugInstall` and then you should be able to type `:h myhelp`
+
+## Making a Change
+Edit files in `/doc`. If you add new tags, make sure to run `:helpt <path-to-plugin-folder>` to generate tag file

@@ -1,0 +1,25 @@
+*myhelp.txt*	Last change: 2022 March 23
+*myhelp*
+
+Shashank's cheatsheet for Vim
+
+===============================================================================
+CONTENTS
+
+	1. Normal Mode.......................................|myhelp-normal|
+	2. Visual Mode.......................................|myhelp-visual|
+	3. Insert Mode.......................................|myhelp-insert|
+	4. Notes.............................................|myhelp-notes|
+	5. Rebuilding this file
+
+===============================================================================
+
+===============================================================================
+5. Rebuilding this file.
+
+This file is loaded as a plugin. If you ever need to rebuild the tags file, run
+this command: >
+   :helpt <:/path/to/this/directory>
+<
+
+You may need to restart VIM to see the updated version.
