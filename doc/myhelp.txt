@@ -1,4 +1,4 @@
-*myhelp.txt*	Last change: 2022 March 23
+*myhelp.txt*	Last change: 2022 Aug 08
 *myhelp*
 
 Shashank's cheatsheet for Vim
@@ -6,22 +6,39 @@ Shashank's cheatsheet for Vim
 ===============================================================================
 CONTENTS
 
-	1. To Practice..................................|myhelp-to-practice|
-	2. Visual Mode.......................................|myhelp-visual|
-	3. Insert Mode.......................................|myhelp-insert|
-	4. Notes.............................................|myhelp-notes|
+	1. To Practice...............................................|myhelp-practice|
+	2. Cheat Sheet..................................................|myhelp-cheat|
+	3. My Setup.....................................................|myhelp-setup|
+  4. Todo..........................................................|myhelp-todo|
 	5. Rebuilding this file
 
 ===============================================================================
 
 ===============================================================================
-1. To Practice                                             *myhelp-to-practice*
+1. To Practice                                                *myhelp-practice*
 
 - visual mode: v, shift-v
 - search: /, ?, n, N, *, #
 
 ===============================================================================
-5. Rebuilding this file.
+2. Cheat Sheet                                                   *myhelp-cheat*
+
+===============================================================================
+3. My Setup                                                      *myhelp-setup*
+
+- hit `:Telescope <tab>`
+
+===============================================================================
+4. Todo                                                           *myhelp-todo*
+
+- go again through Tutor
+- cleanup nvim old config and make sure everything is ported
+- setup null-ls and lsp
+- setup cue lsp
+- enable whichkey
+
+===============================================================================
+4. Rebuilding this file.
 
 This file is loaded as a plugin. If you ever need to rebuild the tags file, run
 this command: >
