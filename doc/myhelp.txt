@@ -48,6 +48,8 @@ CONTENTS
 
 - [x] fix mason-lspconfig
   - this did not work with lazy loading of mason in nvchad. Maybe look at it later
+- [x] understand and setup lspconfig and mason
+- [x] setup cmp
 - [ ] setup treesitter
 - [ ] setup null-ls
 - [ ] go through setup videos again from chris@machine
@@ -58,12 +60,12 @@ CONTENTS
 - [ ] check toggleTerm
 - [ ] setup nvim-dap
 - [ ] understand telescope
-- [ ] understand cmp
 - [ ] enable whichkey
 - [ ] go again through Tutor
 - [ ] cleanup nvim old config and make sure everything is ported
 - [ ] check out AstroNvim
 - [ ] setup cue lsp
+- [ ] explore cmp plugins
 
 ===============================================================================
 4. Rebuilding this file.
