@@ -46,13 +46,24 @@ CONTENTS
 ===============================================================================
 4. Todo                                                           *myhelp-todo*
 
-- fix mason-lspconfig
-- go again through Tutor
-- cleanup nvim old config and make sure everything is ported
-- setup null-ls
-- setup cue lsp
-- enable whichkey
-- check out AstroNvim
+- [x] fix mason-lspconfig
+  - this did not work with lazy loading of mason in nvchad. Maybe look at it later
+- [ ] setup treesitter
+- [ ] setup null-ls
+- [ ] go through setup videos again from chris@machine
+- [ ] setup for typescript
+- [ ] setup nvim-notify
+- [ ] setup nlsp-settings.nvim
+- [ ] setup trouble-nvim
+- [ ] check toggleTerm
+- [ ] setup nvim-dap
+- [ ] understand telescope
+- [ ] understand cmp
+- [ ] enable whichkey
+- [ ] go again through Tutor
+- [ ] cleanup nvim old config and make sure everything is ported
+- [ ] check out AstroNvim
+- [ ] setup cue lsp
 
 ===============================================================================
 4. Rebuilding this file.
