@@ -62,14 +62,13 @@ CONTENTS
 - [x] setup cmp
 - [x] setup treesitter
 - [x] setup null-ls
-- [ ] setup nlsp-settings.nvim with jsonlsp
+- [ ] understand telescope
 - [ ] go through setup videos again from chris@machine
 - [ ] setup for typescript
 - [ ] setup nvim-notify
 - [ ] setup trouble-nvim
 - [ ] check toggleTerm
 - [ ] setup nvim-dap
-- [ ] understand telescope
 - [ ] enable whichkey
 - [ ] go again through Tutor
 - [ ] cleanup nvim old config and make sure everything is ported
@@ -77,7 +76,9 @@ CONTENTS
 - [ ] setup cue lsp
 - [ ] check refactoring.nvim plugin
 - [ ] play around more with null-ls
+- [ ] play with treesitter extensions
 - [ ] explore cmp plugins
+- [ ] setup nlsp-settings.nvim with jsonlsp
 
 ===============================================================================
 4. Rebuilding this file.
