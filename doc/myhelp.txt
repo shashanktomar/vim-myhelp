@@ -29,7 +29,6 @@ CONTENTS
 ## What is What?
 
 ### LSP
-- lsp is configured using `lspconfig.lua` in `custom/plugins/`. 
 - the list for the servers can be found [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 - check active lsp servers for current buffer: `:LspInfo`
 
@@ -38,6 +37,17 @@ CONTENTS
 - mason is lsp-server + lint + debug + format plugins installer. 
 - the names are mapped to lsp names by mason-lspconfig plugin
 - install all the mason plugins: `:MasonInstallAll`. It is a custom command added by nvchad
+
+### Null-ls
+- check active info with `:NullLsInfo` 
+
+### Cmp
+- it is a completion plugin with lots of addon plugins
+- run `:CmpStatu`
+
+### TreeSitter
+- run `:TSConfigInfo` and `:TSModuleInfo`
+- check `:TSPlaygroundToggle`
 
 ## Tips
 - check plugins that are loaded: `:PackerStatus`
@@ -50,12 +60,12 @@ CONTENTS
   - this did not work with lazy loading of mason in nvchad. Maybe look at it later
 - [x] understand and setup lspconfig and mason
 - [x] setup cmp
-- [ ] setup treesitter
-- [ ] setup null-ls
+- [x] setup treesitter
+- [x] setup null-ls
+- [ ] setup nlsp-settings.nvim with jsonlsp
 - [ ] go through setup videos again from chris@machine
 - [ ] setup for typescript
 - [ ] setup nvim-notify
-- [ ] setup nlsp-settings.nvim
 - [ ] setup trouble-nvim
 - [ ] check toggleTerm
 - [ ] setup nvim-dap
@@ -65,6 +75,8 @@ CONTENTS
 - [ ] cleanup nvim old config and make sure everything is ported
 - [ ] check out AstroNvim
 - [ ] setup cue lsp
+- [ ] check refactoring.nvim plugin
+- [ ] play around more with null-ls
 - [ ] explore cmp plugins
 
 ===============================================================================
