@@ -62,6 +62,7 @@ CONTENTS
 - [x] setup cmp
 - [x] setup treesitter
 - [x] setup null-ls
+- [ ] setup git and gitsigns
 - [ ] understand telescope
 - [ ] go through setup videos again from chris@machine
 - [ ] setup for typescript
