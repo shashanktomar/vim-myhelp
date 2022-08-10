@@ -39,11 +39,13 @@ CONTENTS
 - install all the mason plugins: `:MasonInstallAll`. It is a custom command added by nvchad
 
 ### Null-ls
+- it is just another language server. If you run `:LspInfo` on a code buffer, you can see it appear in the list of servers
+- to get better understanding of code-completion through null-ls, have a look at [this](https://www.reddit.com/r/neovim/comments/qphvt7/nulllsnvim_now_supports_completion_sources/) reddit thread
 - check active info with `:NullLsInfo` 
 
 ### Cmp
 - it is a completion plugin with lots of addon plugins
-- run `:CmpStatu`
+- run `:CmpStatus`
 
 ### TreeSitter
 - run `:TSConfigInfo` and `:TSModuleInfo`
@@ -62,8 +64,8 @@ CONTENTS
 - [x] setup cmp
 - [x] setup treesitter
 - [x] setup null-ls
-- [ ] setup git and gitsigns
 - [ ] understand telescope
+- [ ] setup git and gitsigns
 - [ ] go through setup videos again from chris@machine
 - [ ] setup for typescript
 - [ ] setup nvim-notify
