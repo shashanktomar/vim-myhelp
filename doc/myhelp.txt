@@ -17,11 +17,35 @@ CONTENTS
 ===============================================================================
 1. To Practice                                                *myhelp-practice*
 
-- visual mode: v, shift-v
+- insert: i, a, I, A, o, O, r, R
+- delete: x, X, d<motion>, dd, D, J
+- visual mode: v, A-v, C-v, `gn` after search
 - search: /, ?, n, N, *, #
+- search in line: t, f, `;`, `'` 
+- recorded macros: https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db
 
 ===============================================================================
 2. Cheat Sheet                                                   *myhelp-cheat*
+
+## Language
+- operators(verbs): `:help operator`
+  - c, d, y
+  - toggle case `~`
+  - tab: `>`, `<`
+- motions: `:h motion.txt`
+  - modifiers(range)
+    - i(inside), a(around), NUM,
+    - t(till), T, f(find), F, `;`, `'`
+    - 0, ^, $ 
+  - text-objects(nouns):
+    - words: w, W, e, E, b, B, ge, gE
+    - text objects:
+      - sentence: s or ), S or (
+      - paragraph: p or }, P or {
+      - to {: ]], ][, [[, []
+
+## Commands
+- check mapped keys: `:map` and `:map!`
 
 ===============================================================================
 3. My Setup                                                      *myhelp-setup*
@@ -68,7 +92,7 @@ CONTENTS
 - [ ] setup git and gitsigns
 - [ ] go through setup videos again from chris@machine
 - [ ] setup for typescript
-- [ ] setup nvim-notify
+- [x] setup nvim-notify
 - [ ] setup trouble-nvim
 - [ ] check toggleTerm
 - [ ] setup nvim-dap
