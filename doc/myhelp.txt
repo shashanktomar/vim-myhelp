@@ -10,7 +10,7 @@ CONTENTS
 	2. Cheat Sheet.......................................|myhelp-cheat|
 	3. My Setup..........................................|myhelp-setup|
 	4. Todo..............................................|myhelp-todo|
-	5. Rebuilding this file
+	5. About writing help
 
 ===============================================================================
 
@@ -23,11 +23,13 @@ CONTENTS
 - search: /, ?, n, N, *, #
 - search in line: t, f, `;`, `'` 
 - recorded macros: https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db
+- line movement
+  - `ddp` to swap lines
 
 ===============================================================================
 2. Cheat Sheet                                                   *myhelp-cheat*
 
-## Language
+Language~
 - operators(verbs): `:help operator`
   - c, d, y
   - toggle case `~`
@@ -44,75 +46,82 @@ CONTENTS
       - paragraph: p or }, P or {
       - to {: ]], ][, [[, []
 
-## Commands
+Commands~
 - check mapped keys: `:map` and `:map!`
+
+Registers~
+- Math expression
+  - in insert mode, do `<C-r>=`. Here `<C-r>` paste from a register and `=` is
+    a math register
 
 ===============================================================================
 3. My Setup                                                      *myhelp-setup*
 
-## What is What?
-
-### LSP
+LSP~
+- to know the history of LSP support in neovim, check this out https://www.vikasraj.dev/blog/lsp-neovim-retrospective
+- in nvim 0.7m nvim-lspconfig is advised. This might not be the case for 0.8
 - the list for the servers can be found [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 - check active lsp servers for current buffer: `:LspInfo`
 
-### Mason
+Mason~
 - it only download stuff, does not run any lsp servers
 - mason is lsp-server + lint + debug + format plugins installer. 
 - the names are mapped to lsp names by mason-lspconfig plugin
 - install all the mason plugins: `:MasonInstallAll`. It is a custom command added by nvchad
 
-### Null-ls
+Null-ls~
 - it is just another language server. If you run `:LspInfo` on a code buffer, you can see it appear in the list of servers
 - to get better understanding of code-completion through null-ls, have a look at [this](https://www.reddit.com/r/neovim/comments/qphvt7/nulllsnvim_now_supports_completion_sources/) reddit thread
 - check active info with `:NullLsInfo` 
 
-### Cmp
+Cmp~
 - it is a completion plugin with lots of addon plugins
 - run `:CmpStatus`
 
-### TreeSitter
+TreeSitter~
 - run `:TSConfigInfo` and `:TSModuleInfo`
 - check `:TSPlaygroundToggle`
 
-## Tips
+Tips~
 - check plugins that are loaded: `:PackerStatus`
-- hit `:Telescope <tab>`
+- you can send items from Telescope to qflist, ooohhh
 
 ===============================================================================
 4. Todo                                                           *myhelp-todo*
 
-- [x] fix mason-lspconfig
-  - this did not work with lazy loading of mason in nvchad. Maybe look at it later
 - [x] understand and setup lspconfig and mason
 - [x] setup cmp
 - [x] setup treesitter
 - [x] setup null-ls
-- [ ] understand telescope
+- [x] setup telescope
+- [x] play with treesitter extensions
+- [x] setup for typescript
+- [x] setup nvim-notify
+- [x] enable whichkey
+- [x] explore cmp plugins
 - [ ] setup git and gitsigns
 - [ ] go through setup videos again from chris@machine
-- [ ] setup for typescript
-- [x] setup nvim-notify
+- [ ] go through allaman's config
+- [ ] cleanup nvim old config and make sure everything is ported
 - [ ] setup trouble-nvim
 - [ ] check toggleTerm
 - [ ] setup nvim-dap
-- [ ] enable whichkey
 - [ ] go again through Tutor
-- [ ] cleanup nvim old config and make sure everything is ported
 - [ ] check out AstroNvim
 - [ ] setup cue lsp
 - [ ] check refactoring.nvim plugin
 - [ ] play around more with null-ls
-- [ ] play with treesitter extensions
-- [ ] explore cmp plugins
-- [ ] setup nlsp-settings.nvim with jsonlsp
+- [ ] learn how to write a treesitter plugin
 
 ===============================================================================
-4. Rebuilding this file.
+4. About writing help
 
+Check https://devhints.io/vim-help. Also check `:help help-writing`
+
+Rebuild help tags~
 This file is loaded as a plugin. If you ever need to rebuild the tags file, run
-this command: >
-   :helpt <:/path/to/this/directory>
-<
+this command:  `:helpt <:/path/to/this/directory>`. You may need to restart VIM to see the updated version.
 
-You may need to restart VIM to see the updated version.
+View this doc as help while writing it~
+- `:set ft=help`
+- to view it again as txt file run `:set ft=txt`
