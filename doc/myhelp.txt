@@ -89,6 +89,7 @@ Tips~
 ===============================================================================
 4. Todo                                                           *myhelp-todo*
 
+Plugins~
 - [x] understand and setup lspconfig and mason
 - [x] setup cmp
 - [x] setup treesitter
@@ -99,12 +100,18 @@ Tips~
 - [x] setup nvim-notify
 - [x] enable whichkey
 - [x] explore cmp plugins
-- [ ] setup git and gitsigns
+- [x] setup git and gitsigns
+- [x] check toggleTerm
+- [ ] setup format on save
+- [ ] explore luasnip
+- [ ] explore nvim-bqf
 - [ ] go through setup videos again from chris@machine
 - [ ] go through allaman's config
+  - [x] toggle_autoformat
+  - [x] toggle diagnostics
+  - [ ] check toggle_qf, toggle_colorcolumn and escape-pair in functions.lua
 - [ ] cleanup nvim old config and make sure everything is ported
 - [ ] setup trouble-nvim
-- [ ] check toggleTerm
 - [ ] setup nvim-dap
 - [ ] go again through Tutor
 - [ ] check out AstroNvim
@@ -112,6 +119,18 @@ Tips~
 - [ ] check refactoring.nvim plugin
 - [ ] play around more with null-ls
 - [ ] learn how to write a treesitter plugin
+- [ ] understand tmux
+- [ ] check other people's setup on youtube and blogs
+- [ ] pin plugin versions
+- [ ] git plugins to explore
+  - [ ] vim fugitive
+  - [ ] explore neogit
+  - [ ] explore diffview
+- [ ] explore bufdelete.nvim
+
+UseCases~
+- [ ] how to save all buffers safely after rename
+- [ ] how to move past the closed brackets in insert mode
 
 ===============================================================================
 4. About writing help
