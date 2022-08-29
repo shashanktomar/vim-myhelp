@@ -48,6 +48,8 @@ Language~
 
 Commands~
 - check mapped keys: `:map` and `:map!`
+  - you can check more fine grained mappings per mode: `xmap` for visual,
+    `omap` for operating waiting, `nmap` for normal etc. Check `:h map`
 
 Registers~
 - Math expression
@@ -102,7 +104,8 @@ Plugins~
 - [x] explore cmp plugins
 - [x] setup git and gitsigns
 - [x] check toggleTerm
-- [ ] setup format on save
+- [x] setup format on save
+- [x] explore mini.nvim
 - [ ] explore luasnip
 - [ ] explore nvim-bqf
 - [ ] go through setup videos again from chris@machine
@@ -118,7 +121,7 @@ Plugins~
 - [ ] setup cue lsp
 - [ ] check refactoring.nvim plugin
 - [ ] play around more with null-ls
-- [ ] learn how to write a treesitter plugin
+- [ ] learn how to write a treesitter plugin and understand how treesitter queries works
 - [ ] understand tmux
 - [ ] check other people's setup on youtube and blogs
 - [ ] pin plugin versions
@@ -127,10 +130,12 @@ Plugins~
   - [ ] explore neogit
   - [ ] explore diffview
 - [ ] explore bufdelete.nvim
+- [ ] move to alacritty
 
 UseCases~
 - [ ] how to save all buffers safely after rename
 - [ ] how to move past the closed brackets in insert mode
+- [ ] how to jump to parent node
 
 ===============================================================================
 4. About writing help
