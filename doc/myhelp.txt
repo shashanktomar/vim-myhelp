@@ -106,8 +106,8 @@ Plugins~
 - [x] check toggleTerm
 - [x] setup format on save
 - [x] explore mini.nvim
+- [ ] session management
 - [ ] explore luasnip
-- [ ] explore nvim-bqf
 - [ ] go through setup videos again from chris@machine
 - [ ] go through allaman's config
   - [x] toggle_autoformat
@@ -131,6 +131,7 @@ Plugins~
   - [ ] explore diffview
 - [ ] explore bufdelete.nvim
 - [ ] move to alacritty
+- [ ] understand how operatorfunc and g@ works. Write your own operator. Mini.comment code can help here
 
 UseCases~
 - [ ] how to save all buffers safely after rename
