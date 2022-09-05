@@ -7,10 +7,11 @@ Shashank's cheatsheet for Vim
 CONTENTS
 
 	1. To Practice.......................................|myhelp-practice|
-	2. Cheat Sheet.......................................|myhelp-cheat|
-	3. My Setup..........................................|myhelp-setup|
-	4. Todo..............................................|myhelp-todo|
-	5. About writing help
+	2. Vim Cheat Sheet.......................................|myhelp-vim-cheat|
+	3. Tmux Cheat Sheet.......................................|myhelp-tmux-cheat|
+	4. My Setup..........................................|myhelp-setup|
+	5. Todo..............................................|myhelp-todo|
+	6. About writing help
 
 ===============================================================================
 
@@ -27,7 +28,7 @@ CONTENTS
   - `ddp` to swap lines
 
 ===============================================================================
-2. Cheat Sheet                                                   *myhelp-cheat*
+2. Vim Cheat Sheet                                                   *myhelp-vim-cheat*
 
 Language~
 - operators(verbs): `:help operator`
@@ -56,8 +57,86 @@ Registers~
   - in insert mode, do `<C-r>=`. Here `<C-r>` paste from a register and `=` is
     a math register
 
+Other Things~
+- how to test a simple script
+  - open a new file, get the bufnr with: `echo nvim_get_current_buff()`
+  - open another to write the script and name is something like test.lua
+  - you can write to first file as you type code using `vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "hello", "world" })`
+
 ===============================================================================
-3. My Setup                                                      *myhelp-setup*
+3. Tmux Cheat Sheet                                                   *myhelp-tmux-cheat*
+
+Help~
+- see all keys `C-b ?`  
+- see what a key is mapped to `C-b /`  
+- `:list-commands` list all commands
+
+Command Mode~
+- `C-b :` enters the command mode
+
+Sessions~
+- `C-b d`: to detach from a session  
+- `tmux attach`  
+	- attach to most recent by default  
+	- `-t` to give a name. Example: `tmux attach -tmysession`: attach to `mysession`  
+	- `-d` to detach any other clients attached to this session. Example `tmux attach -dtmysession`  
+	- `-A` to attach if exist or create.  Example: `tmux attach -Amysession`  
+- changing a window in a session, command is `select-window` aliased to
+  `selectw`
+  - `C-b n`: where n is the window number
+  - `C-b '`: prompts you to enter a number
+  - `C-b n` and `C-b p`: next and previous
+  - `C-b l`: last window
+
+Windows~
+- `new-window` command, alias is `neww`
+  - `C-b c`: is shortcut for it 
+  - `-d` create it but does not make it the current window
+  - `-n` let you provide a name. Example `:neww -dnmynewwindow`
+  - `-t` let you give it a target index
+  - commands to run in default pane in the window can be passed. Example
+    `:nnew top`
+- `split-window` command, alias is `splitw`
+  - `C-b %` to split horizontally, or `splitw -h`
+  - `C-b "` to split vertically, or `splitw -v`
+  - `-f` create a full screen pane in the window
+  - `-b` put the pane at top or left rather than bottom or right
+  - a command to run in new pane can be passed same as to `neww` or `new-session` command
+- `kill-window` or `C-b &`
+
+Panes~
+- `select-pane` and `display-panes` commands
+  - `C-b <Arrow keys>`
+  - `C-b q` prints the pane number
+  - `C-b q n`: will change to pane number
+  - `C-b o`: moves to the next pane
+  - `C-b C-o`: swaps the pane with active pane
+- `kill-pane` or `C-b x`
+
+Tree Mode~
+- command is `choose-tree`
+- `C-b s`: show sessions but fold windows
+- `C-b w`: expand windows view also
+- tree bindings
+  - `v` toggle preview
+  - arrow keys to navigate, fold and unfold
+  - `<CR>` to select
+  - `O` changes the order of items and `r` reverse the sort order
+  - `t` to tag/untag items, `C-t` to tag all and `T` to untag all
+  - `X` to kill all tagged items
+  - `:` a command can be applied to all tagged items
+  - `C-s` to search items and `n` to repeat last search
+- `C-b D`: to see a tree view of list of clients
+  - `<CR>` or `d` detach the selected client
+  - `D` detach tagged clients 
+  - `x`: detach and kill shell which started it
+  - `X`: detach all tagged and kill all shells which started them
+
+Others~
+- `:kill-server` kill every session and exit
+
+===============================================================================
+4. My Setup                                                      *myhelp-setup*
 
 LSP~
 - to know the history of LSP support in neovim, check this out https://www.vikasraj.dev/blog/lsp-neovim-retrospective
@@ -89,7 +168,7 @@ Tips~
 - you can send items from Telescope to qflist, ooohhh
 
 ===============================================================================
-4. Todo                                                           *myhelp-todo*
+5. Todo                                                           *myhelp-todo*
 
 Plugins~
 - [x] understand and setup lspconfig and mason
@@ -139,7 +218,7 @@ UseCases~
 - [ ] how to jump to parent node
 
 ===============================================================================
-4. About writing help
+6. About writing help
 
 Check https://devhints.io/vim-help. Also check `:help help-writing`
 
