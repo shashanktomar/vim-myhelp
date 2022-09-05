@@ -30,13 +30,13 @@ Vim~
 
 Language~
 
-  *operators(verbs): |:help operator|*
+  operators(verbs): |:help operator|
 
     - c, d, y
     - toggle case `~`
     - tab: `>`, `<`
 
-  *motions: |:h motion.txt|*
+  motions: |:h motion.txt|
 
     - modifiers(range)
       - i(inside), a(around), NUM,
@@ -58,8 +58,8 @@ Commands~
 
 Registers~
 
-- Math expression
-  - in insert mode, do `<C-r>=`. Here `<C-r>` paste from a register and `=` is
+  Math expression
+    - in insert mode, do |<C-r>=|. Here |<C-r>| paste from a register and |=| is
     a math register
 
 Other Things~
