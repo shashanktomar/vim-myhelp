@@ -1,4 +1,4 @@
-# Shashank's Vim Cheatsheet
+# Shashank's Cheatsheet for Terminal Things
 
 This is inspired from [technosophos](https://github.com/technosophos/vim-myhelp)
 

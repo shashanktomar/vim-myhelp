@@ -1,7 +1,7 @@
 *myhelp.txt*	Last change: 2022 Aug 08
 *myhelp*
 
-Shashank's cheatsheet for Vim
+Shashank's cheatsheet for all things terminal 
 
 ===============================================================================
 CONTENTS
@@ -14,50 +14,56 @@ CONTENTS
 	6. About writing help
 
 ===============================================================================
+ 1. To Practice                                                *myhelp-practice*
+
+Vim~
+
+  - delete: X 
+  - visual mode: ge, V, C-v, `gn` after search
+  - search: ?, *, #
+  - recorded macros: https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db
+  - line movement
+    - `ddp` to swap lines
 
 ===============================================================================
-1. To Practice                                                *myhelp-practice*
-
-- insert: i, a, I, A, o, O, r, R
-- delete: x, X, d<motion>, dd, D, J
-- visual mode: v, A-v, C-v, `gn` after search
-- search: /, ?, n, N, *, #
-- search in line: t, f, `;`, `'` 
-- recorded macros: https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db
-- line movement
-  - `ddp` to swap lines
-
-===============================================================================
-2. Vim Cheat Sheet                                                   *myhelp-vim-cheat*
+ 2. Vim Cheat Sheet                                                   *myhelp-vim-cheat*
 
 Language~
-- operators(verbs): `:help operator`
-  - c, d, y
-  - toggle case `~`
-  - tab: `>`, `<`
-- motions: `:h motion.txt`
-  - modifiers(range)
-    - i(inside), a(around), NUM,
-    - t(till), T, f(find), F, `;`, `'`
-    - 0, ^, $ 
-  - text-objects(nouns):
-    - words: w, W, e, E, b, B, ge, gE
-    - text objects:
-      - sentence: s or ), S or (
-      - paragraph: p or }, P or {
-      - to {: ]], ][, [[, []
+
+  *operators(verbs): |:help operator|*
+
+    - c, d, y
+    - toggle case `~`
+    - tab: `>`, `<`
+
+  *motions: |:h motion.txt|*
+
+    - modifiers(range)
+      - i(inside), a(around), NUM,
+      - t(till), T, f(find), F, `;`, `'`
+      - 0, ^, $ 
+
+    - text-objects(nouns):
+      - words: w, W, e, E, b, B, ge, gE
+      - text objects:
+        - sentence: s or ), S or (
+        - paragraph: p or }, P or {
+        - to {: ]], ][, [[, []
 
 Commands~
-- check mapped keys: `:map` and `:map!`
-  - you can check more fine grained mappings per mode: `xmap` for visual,
+
+  check mapped keys: |:map| and |:map!|
+    - you can check more fine grained mappings per mode: `xmap` for visual,
     `omap` for operating waiting, `nmap` for normal etc. Check `:h map`
 
 Registers~
+
 - Math expression
   - in insert mode, do `<C-r>=`. Here `<C-r>` paste from a register and `=` is
     a math register
 
 Other Things~
+
 - how to test a simple script
   - open a new file, get the bufnr with: `echo nvim_get_current_buff()`
   - open another to write the script and name is something like test.lua
