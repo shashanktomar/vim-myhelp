@@ -7,12 +7,10 @@ Shashank's cheatsheet for all things terminal
 CONTENTS
 
 	1. To Practice.......................................|myhelp-practice|
-	2. Vim Cheat Sheet...................................|myhelp-vim-cheat|
-	3. Tmux Cheat Sheet..................................|myhelp-tmux-cheat|
-	4. ZSH Cheat Sheet...................................|myhelp-zsh-cheat|
-	5. My Setup..........................................|myhelp-setup|
-	6. Todo..............................................|myhelp-todo|
-	7. About writing help
+	2. Vim Cheat Sheet.......................................|myhelp-vim-cheat|
+	3. Tmux Cheat Sheet.......................................|myhelp-tmux-cheat|
+	4. My Setup..........................................|myhelp-setup|
+	5. About writing help
 
 ===============================================================================
  1. To Practice                                                *myhelp-practice*
@@ -27,7 +25,7 @@ Vim~
     - `ddp` to swap lines
 
 ===============================================================================
- 2. Vim Cheat Sheet                                                   *myhelp-vim-cheat*
+ 2. Vim Cheat Sheet                                            *myhelp-vim-cheat*
 
 Language~
 
@@ -74,7 +72,7 @@ Other Things~
     - you can write to first file as you type code using `vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "hello", "world" })`
 
 ===============================================================================
-3. Tmux Cheat Sheet                                                   *myhelp-tmux-cheat*
+3. Tmux Cheat Sheet                                           *myhelp-tmux-cheat*
 
 Help~
 
@@ -187,17 +185,7 @@ Others~
 - `:kill-server` kill every session and exit
 
 ===============================================================================
-4. ZSH Cheat Sheet                                                   *myhelp-zsh-cheat*
-
-- `zle -al`: diplay all available actions (widgets in zsh language)
-- `bindkey -l`: to get the list of existing keymaps
-- `bindkey -M <keymap>`: to list all the bindings in that keymap
-- zsh have weird key bindings. To see what a key characters are passed as key
-  binding, run `cat` and press the keys, for example, press `ALT-t`, this is
-  what you want to put in your `bindkey` config
-
-===============================================================================
-5. My Setup                                                      *myhelp-setup*
+4. My Setup                                                        *myhelp-setup*
 
 LSP~
 - to know the history of LSP support in neovim, check this out https://www.vikasraj.dev/blog/lsp-neovim-retrospective
@@ -229,60 +217,7 @@ Tips~
 - you can send items from Telescope to qflist, ooohhh
 
 ===============================================================================
-5. Todo                                                           *myhelp-todo*
-
-Plugins~
-- [x] understand and setup lspconfig and mason
-- [x] setup cmp
-- [x] setup treesitter
-- [x] setup null-ls
-- [x] setup telescope
-- [x] play with treesitter extensions
-- [x] setup for typescript
-- [x] setup nvim-notify
-- [x] enable whichkey
-- [x] explore cmp plugins
-- [x] setup git and gitsigns
-- [x] check toggleTerm
-- [x] setup format on save
-- [x] explore mini.nvim
-- [ ] add cht.sh script from here: https://www.youtube.com/watch?v=hJzqEAf2U4I
-- [ ] session management
-- [ ] explore luasnip
-- [ ] go through setup videos again from chris@machine
-- [ ] go through allaman's config
-  - [x] toggle_autoformat
-  - [x] toggle diagnostics
-  - [ ] check toggle_qf, toggle_colorcolumn and escape-pair in functions.lua
-- [ ] cleanup nvim old config and make sure everything is ported
-- [ ] setup trouble-nvim
-- [ ] setup nvim-dap
-- [ ] go again through Tutor
-- [ ] check out AstroNvim
-- [ ] setup cue lsp
-- [ ] check refactoring.nvim plugin
-- [ ] play around more with null-ls
-- [ ] learn how to write a treesitter plugin and understand how treesitter queries works
-- [ ] understand tmux
-- [ ] check other people's setup on youtube and blogs
-- [ ] pin plugin versions
-- [ ] git plugins to explore
-  - [ ] vim fugitive
-  - [ ] explore neogit
-  - [ ] explore diffview
-- [ ] explore bufdelete.nvim
-- [ ] move to alacritty
-- [ ] understand how operatorfunc and g@ works. Write your own operator. Mini.comment code can help here
-- [ ] jrnl.sh
-
-UseCases~
-- [ ] js test snippets not working
-- [ ] how to save all buffers safely after rename
-- [ ] how to move past the closed brackets in insert mode
-- [ ] how to jump to parent node
-
-===============================================================================
-7. About writing help
+5. About writing help
 
 Check https://devhints.io/vim-help. Also check `:help help-writing`
 
