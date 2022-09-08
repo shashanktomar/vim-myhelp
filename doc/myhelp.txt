@@ -7,11 +7,12 @@ Shashank's cheatsheet for all things terminal
 CONTENTS
 
 	1. To Practice.......................................|myhelp-practice|
-	2. Vim Cheat Sheet.......................................|myhelp-vim-cheat|
-	3. Tmux Cheat Sheet.......................................|myhelp-tmux-cheat|
-	4. My Setup..........................................|myhelp-setup|
-	5. Todo..............................................|myhelp-todo|
-	6. About writing help
+	2. Vim Cheat Sheet...................................|myhelp-vim-cheat|
+	3. Tmux Cheat Sheet..................................|myhelp-tmux-cheat|
+	4. ZSH Cheat Sheet...................................|myhelp-zsh-cheat|
+	5. My Setup..........................................|myhelp-setup|
+	6. Todo..............................................|myhelp-todo|
+	7. About writing help
 
 ===============================================================================
  1. To Practice                                                *myhelp-practice*
@@ -77,17 +78,26 @@ Other Things~
 
 Help~
 
-  - see all keys `C-b ?`  
-  - see what a key is mapped to `C-b /`  
-  - `:list-commands` list all commands
+  - `:list-keys` or `:lsk` or `tmux lsk`
+    - to check keys for a table, use `-T`. Example `:lsk -T prefix` or `:lsk
+      -T prefix -N` for pretty print
+    - also try `tmux lsk -N | more`
+
+  - `:list-commands` or `tmux list-commands`
+  - see all keys from prefix table: `C-b ?`  
+  - see what a key is mapped to `C-b /` 
 
 Command Mode~
 
   - `C-b :` enters the command mode
+  - multiple commands can be passed by separating them with `;`
 
 Sessions~
 
-  - `C-b d`: to detach from a session  
+  - `new-session` or `new`
+    - `-s` to give name. Example `tmux new -smysession`
+    - to run a command, `tmux new 'nvim ~/.zshrc'`
+    - to run it in a named window, `tmux new -nwindowname htop`
 
   - `tmux attach`  
     - attach to most recent by default  
@@ -95,12 +105,19 @@ Sessions~
     - `-d` to detach any other clients attached to this session. Example `tmux attach -dtmysession`  
     - `-A` to attach if exist or create.  Example: `tmux attach -Amysession`  
 
+  - `C-b d`: to detach from a session  
+
   - changing a window in a session, command is `select-window` aliased to
     `selectw`
     - `C-b n`: where n is the window number
     - `C-b '`: prompts you to enter a number
     - `C-b n` and `C-b p`: next and previous
     - `C-b l`: last window
+
+  - session groups
+    - To understand the usecase, check this https://unix.stackexchange.com/questions/24274/attach-to-different-windows-in-session/24288#24288
+    - `new-session` take a `-t` flat. Provide the name of another existing
+      session here 
 
 Windows~
 
@@ -119,6 +136,7 @@ Windows~
     - `-b` put the pane at top or left rather than bottom or right
     - a command to run in new pane can be passed same as to `neww` or `new-session` command
 
+  - `rename-window` or `C-b ,`
   - `kill-window` or `C-b &`
 
 Panes~
@@ -131,6 +149,14 @@ Panes~
     - `C-b C-o`: swaps the pane with active pane
 
   - `kill-pane` or `C-b x`
+
+  - resize and zoom
+    - `C-b z` will zoom into and zoom out of pane
+    - `C-b C-<arrow-keys>` resize with small jumps, `C-b M-<arrow-keys>`
+      resize with big jumps
+  
+  - predefined layouts
+    - `C-b space` to cycle through them. Or `C-b M-<n>` where n is a number
 
 Tree Mode~
 
@@ -154,12 +180,24 @@ Tree Mode~
     - `x`: detach and kill shell which started it
     - `X`: detach all tagged and kill all shells which started them
 
+  - `C-b f` enter the tree view with searched text
+
 Others~
 
 - `:kill-server` kill every session and exit
 
 ===============================================================================
-4. My Setup                                                      *myhelp-setup*
+4. ZSH Cheat Sheet                                                   *myhelp-zsh-cheat*
+
+- `zle -al`: diplay all available actions (widgets in zsh language)
+- `bindkey -l`: to get the list of existing keymaps
+- `bindkey -M <keymap>`: to list all the bindings in that keymap
+- zsh have weird key bindings. To see what a key characters are passed as key
+  binding, run `cat` and press the keys, for example, press `ALT-t`, this is
+  what you want to put in your `bindkey` config
+
+===============================================================================
+5. My Setup                                                      *myhelp-setup*
 
 LSP~
 - to know the history of LSP support in neovim, check this out https://www.vikasraj.dev/blog/lsp-neovim-retrospective
@@ -208,6 +246,7 @@ Plugins~
 - [x] check toggleTerm
 - [x] setup format on save
 - [x] explore mini.nvim
+- [ ] add cht.sh script from here: https://www.youtube.com/watch?v=hJzqEAf2U4I
 - [ ] session management
 - [ ] explore luasnip
 - [ ] go through setup videos again from chris@machine
@@ -234,14 +273,16 @@ Plugins~
 - [ ] explore bufdelete.nvim
 - [ ] move to alacritty
 - [ ] understand how operatorfunc and g@ works. Write your own operator. Mini.comment code can help here
+- [ ] jrnl.sh
 
 UseCases~
+- [ ] js test snippets not working
 - [ ] how to save all buffers safely after rename
 - [ ] how to move past the closed brackets in insert mode
 - [ ] how to jump to parent node
 
 ===============================================================================
-6. About writing help
+7. About writing help
 
 Check https://devhints.io/vim-help. Also check `:help help-writing`
 
