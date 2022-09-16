@@ -17,15 +17,28 @@ CONTENTS
 
 Vim~
 
+  - `C-o` in insert mode let you do one-off action from normal mode
   - delete: X 
   - visual mode: ge, V, C-v, `gn` after search
   - search: ?, *, #
   - recorded macros: https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db
   - line movement
     - `ddp` to swap lines
+  - lightspeed bindings
+    - operator pending mode with Z and X
+  - folding
+    - zf start fold and wait for operator. So zfap fold a paragraph
+    - zo and zc to open and close fold, zO and zC
+    - zr, zm, zR and zM,
+    - zn, zN, zi
+    - zd and zD
 
 ===============================================================================
  2. Vim Cheat Sheet                                            *myhelp-vim-cheat*
+
+Help~
+
+  read nvim user manual `:h user-manual`
 
 Language~
 
