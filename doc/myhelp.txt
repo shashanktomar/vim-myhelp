@@ -26,6 +26,12 @@ Vim~
     - `ddp` to swap lines
   - lightspeed bindings
     - operator pending mode with Z and X
+  - yank, delete or change till a search term
+    - `y/search<Enter>`, `y?search<Enter>`
+    - same for `d` or `c`
+  - repeating substitution
+    - Just type `&` to repeat the last substitution on the current line. You can repeat 
+      it on all lines by typing `g&`.
   - folding
     - zf start fold and wait for operator. So zfap fold a paragraph
     - zo and zc to open and close fold, zO and zC
@@ -69,20 +75,96 @@ Commands~
     - you can check more fine grained mappings per mode: `xmap` for visual,
     `omap` for operating waiting, `nmap` for normal etc. Check `:h map`
 
+Anti-Patterns~
+
+  - Moving one line at a time
+    - move by paragraphs or code blocks using `{` and `}`. Or move by pages using 
+      `<Ctrl>b` and `<Ctrl>b`
+    - use lightspeed as much as possible
+    - `g;` to move to last insert location or `g,` to move to next insert location
+
 Registers~
+
+  Default (Unnamed Register):
+
+    vim has a unnamed (or default) register that can be accessed with "". Any 
+    text that you delete (with d, c, s or x) or yank (with y) will be placed 
+    there, and that’s what vim uses to paste, when no explicit register is given.
+    A simple p is the same thing as doing ""p.
+
+  Numbered Registers (Read Only):
+
+    vim automatically populates what is called the numbered registers for us. 
+    As expected, these are registers from "0 to "9. "0 will always have the content 
+    of the latest yank, and the others will have last 9 deleted text, being "1 the 
+    newest, and "9 the oldest. So if you yanked some text, you can always refer to 
+    it using "0p.
+
+  Other Read Only Registers
+
+    - `".` store last insterted text
+    - `"%` store the current file path, starting from the directory where vim was first opened
+    - `":` is the most recently executed command
+    - `"#` is the name of the alternate file, that you can think of it as the last edited file
+    - `"-` stores any text that you deleted or changed that was less than one line in length
+    - `"/` contains the most recent search pattern. This can be handy for inserting the search 
+      pattern on the command line, by pressing Ctrl-R and then /
+
+  Black Hole Register
+
+    - `"_` is a /dev/null of vim world
+    - This may not seem immediately useful, but it does come in handy when running an operation 
+      that you don’t want to clobber the existing contents of the unnamed register. For example, 
+      if you deleted three lines into the unnamed register with 3dd with the intent of pasting 
+      them elsewhere with p, but you wanted to delete another line before doing so, you could 
+      do that with `"_dd`; line gone, and no harm done.
+
+  Manipulate Macros
+
+    - Append to a macro: if you forgot to add a semicolon in the end of that `w` macro, just do 
+      something like `:let @W='i;'`. Noticed the upcased `W?` That’s just how we append a value to 
+      a register, using its upcased name, so here we are just appending the command `i`; to the 
+      register, to enter insert mode (i) and add a semicolon.
+    - Change a macro content: If you need to edit something in the middle of the register, 
+      just do `:let @w='<Ctrl-r w>`, change what you want, and close the quotes in the end. 
+      Done, no more recording a macro 10 times before you get it right. 
 
   Math expression
 
     - in insert mode, do `<C-r>=`. Here `<C-r>` paste from a register and `=` is
-    a math register
+    a expression register
+    - This can be used to execute all sort of expressions, even calling external
+      commands. To give another example, if you type Ctrl-r = and then, in the 
+      command line, `system('ls') <enter>`, the output of the ls command will be 
+      pasted in your buffer
+
+  Recipies
+
+    - copy the current file path to the clipboard: `let @+=@%` . `let` is used to 
+      write to a register, and `"+` is the clipboard register, so we are copying 
+      the current file path to the clipboard.
+    - cherry pick lines/content into a register to paste in a different
+      buffer: Yanking and deleting text into registers normally replaces 
+      the previous contents of that register. In some cases it would be 
+      preferable to append to a register, for example while cherry-picking 
+      different lines from the file to be pasted elsewhere. This can be 
+      done by simply capitalizing the name of the register as it’s referenced:
+        - "ayy — Replace the contents of register a with the current line.
+        - "Ayy — Append the current line to register a.
 
 Other Things~
 
-  How to test a simple script
+  How to test a simple lua script
 
     - open a new file, get the bufnr with: `echo nvim_get_current_buff()`
     - open another to write the script and name is something like test.lua
     - you can write to first file as you type code using `vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "hello", "world" })`
+
+  Enter complex keystrokes as string literals
+
+    You can enter any keystroke in Vim literally in insert or command mode by 
+    prefixing it with `Ctrl+V`, that isn’t really a problem. So to enter a literal 
+    `Ctrl+R` in insert mode, you type `Ctrl+V`, then Ctrl+R.
 
 ===============================================================================
 3. Tmux Cheat Sheet                                           *myhelp-tmux-cheat*
@@ -241,3 +323,5 @@ this command:  `:helpt <:/path/to/this/directory>`. You may need to restart VIM 
 View this doc as help while writing it~
 - `:set ft=help`
 - to view it again as txt file run `:set ft=txt`
+
+ vim:tw=78:ts=8:ft=help:norl:
